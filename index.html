@@ -2,79 +2,236 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Museum 404</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Museum 404</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <a class="logo" href="index.html">Art Museum 404</a>
-      <nav>
-        <ul>
-          <li><a href="#features">メニュー1</a></li>
-          <li><a href="#about">メニュー2</a></li>
-          <li><a href="#access">メニュー3</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="inner">
-        <h1>キャッチコピー（何のサイトか、一目で分かる、短い言葉）</h1>
-        <p>ひとこと説明。だれに、何を伝えるサイトなのか。</p>
-        <a class="btn" href="#access">してほしい行動のボタン</a>
-      </div>
-    </section>
-
-    <section class="features" id="features">
-      <div class="inner">
-        <h2>伝えたいこと</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>1つ目</h3>
-            <p>説明の文章。</p>
-          </article>
-          <article class="card">
-            <h3>2つ目</h3>
-            <p>説明の文章。</p>
-          </article>
-          <article class="card">
-            <h3>3つ目</h3>
-            <p>説明の文章。</p>
-          </article>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">Art Museum 404</a>
         </div>
-      </div>
-    </section>
 
-    <section class="story" id="about">
-      <div class="inner">
-        <h2>紹介（わたしたちについて）</h2>
-        <p>文章。1つの段落は、短めに。</p>
-        <p>文章。</p>
-      </div>
-    </section>
+        <nav>
+            <ul>
+                <li><a href="#features">展示エリア</a></li>
+                <li><a href="#about">美術館について</a></li>
+                <li><a href="#access">ご利用案内</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <section class="info" id="access">
-      <div class="inner">
-        <h2>情報（日時・場所・連絡先など）</h2>
-        <dl>
-          <dt>項目</dt><dd>内容</dd>
-          <dt>項目</dt><dd>内容</dd>
-        </dl>
-        <a class="btn" href="#">してほしい行動のボタン</a>
-      </div>
-    </section>
-  </main>
+    <main>
 
-  <!-- フッター：著作権表示 -->
-  <footer>
-    <div class="inner">
-      <p>© 2026 Art Museum 404. All Rights Reserved.</p>
-    </div>
-  </footer>
+        <!-- Hero -->
+        <section class="hero">
+            <p class="hero-subtitle">WELCOME TO OUR MUSEUM</p>
+
+            <h1>Art Museum 404</h1>
+
+            <p class="hero-description">
+                まだ知らないアートの世界へ。
+            </p>
+
+            <a href="#features" class="btn">
+                アートの世界を探す
+            </a>
+        </section>
+
+        <!-- Museum Entrance -->
+        <section class="entrance" id="features">
+
+            <div class="museum-sign">
+                <span>ART MUSEUM</span>
+                <h2>美術館</h2>
+                <small>EST. 2026</small>
+            </div>
+
+            <div class="doors">
+
+                <!-- Door 1 -->
+                <div class="door-area">
+                    <div class="room-sign">
+                        <span>01</span>
+                        <h3>名画の世界</h3>
+                    </div>
+
+                    <a href="masterpieces.html" class="door">
+                        <div class="door-decoration">✦</div>
+                        <span class="door-number">01</span>
+                        <div class="door-handle"></div>
+                    </a>
+                </div>
+
+                <!-- Door 2 -->
+                <div class="door-area">
+                    <div class="room-sign">
+                        <span>02</span>
+                        <h3>子どものアート</h3>
+                    </div>
+
+                    <a href="children.html" class="door">
+                        <div class="door-decoration">✦</div>
+                        <span class="door-number">02</span>
+                        <div class="door-handle"></div>
+                    </a>
+                </div>
+
+                <!-- Door 3 -->
+                <div class="door-area">
+                    <div class="room-sign">
+                        <span>03</span>
+                        <h3>アートポスター</h3>
+                    </div>
+
+                    <a href="posters.html" class="door">
+                        <div class="door-decoration">✦</div>
+                        <span class="door-number">03</span>
+                        <div class="door-handle"></div>
+                    </a>
+                </div>
+
+                <!-- Door 4 -->
+                <div class="door-area">
+                    <div class="room-sign">
+                        <span>04</span>
+                        <h3>デジタルアート</h3>
+                    </div>
+
+                    <a href="digital.html" class="door">
+                        <div class="door-decoration">✦</div>
+                        <span class="door-number">04</span>
+                        <div class="door-handle"></div>
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="entrance-caption">
+                お好きな扉を選んで、アートの世界へ
+            </p>
+
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="inner">
+
+                <p class="section-subtitle">OUR COLLECTION</p>
+                <h2>展示エリアのご紹介</h2>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <h3>01 名画の世界</h3>
+                        <p>
+                            世界中で愛されている名画や、
+                            歴史に残る芸術作品を紹介します。
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>02 子どものアート</h3>
+                        <p>
+                            子どもたちの自由な発想から生まれる、
+                            個性豊かなアートを楽しめます。
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>03・04 さまざまな表現</h3>
+                        <p>
+                            アートポスターやデジタルアートなど、
+                            現代の多彩な表現に出会えます。
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="about">
+
+            <p class="section-subtitle">ABOUT OUR MUSEUM</p>
+            <h2>美術館について</h2>
+
+            <p>
+                Art Museum 404へようこそ。
+                ここでは、さまざまなジャンルのアートを
+                自由に楽しむことができます。
+            </p>
+
+            <p>
+                4つの扉の向こうに広がる、
+                それぞれ違ったアートの世界をお楽しみください。
+            </p>
+
+        </section>
+
+        <!-- Information -->
+        <section class="information" id="access">
+
+            <p class="section-subtitle">INFORMATION</p>
+            <h2>ご利用案内</h2>
+
+            <div class="information-content">
+                <p>開館時間：10:00 ～ 18:00</p>
+                <p>休館日：月曜日</p>
+                <p>入館料：無料</p>
+            </div>
+
+            <a href="#features" class="btn">
+                展示エリアを見る
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="inner">
+            <p>© 2026 Art Museum 404. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Door Opening Animation -->
+    <script>
+        const doors = document.querySelectorAll(".door");
+
+        doors.forEach((door) => {
+
+            door.addEventListener("click", function(event) {
+
+                event.preventDefault();
+
+                if (door.classList.contains("opening")) {
+                    return;
+                }
+
+                const target = door.getAttribute("href");
+
+                // ドアを開く
+                door.classList.add("opening");
+
+                // アニメーション終了後に移動
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 750);
+
+            });
+
+        });
+    </script>
+
 </body>
 </html>
