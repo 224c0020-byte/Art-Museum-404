@@ -12,7 +12,12 @@
   --main: #555555;      /* 見出しやメイン部分に使用する色 */
   --accent: #999999;    /* ボタンなどに使用するアクセントカラー */
   --text: #222222;      /* 通常の文章に使用する文字色 */
+
+  /* ボタンのホバー効果に使用する設定 */
+  --btn-hover-brightness: 1.08;
+  --transition-fast: 0.2s;
 }
+
 
 /* ---- 余白の設定：統一した間隔を使用する ---- */
 :root {
@@ -22,6 +27,7 @@
   --s4: 3rem;
   --s5: 5rem;
 }
+
 
 /* ---- 2. ページ全体の基本設定 ---- */
 * {
@@ -125,11 +131,14 @@ body {
   padding: .8rem 1.6rem;
   border-radius: 6px;
   text-decoration: none;
+
+  /* ホバー時の変化を0.2秒で滑らかにする */
+  transition: filter var(--transition-fast) ease;
 }
 
 /* ボタンにマウスを合わせたときの効果 */
 .btn:hover {
-  filter: brightness(1.08);
+  filter: brightness(var(--btn-hover-brightness));
 }
 
 
