@@ -1,19 +1,20 @@
+
 /* ============================================================
-   第8回 小課題②：トップページ（スターター）
-   ★のところが、自分で決める場所です。
-   骨組み（並べ方・スマホ対応）は、先に入れてあります。
+   第8回 小課題②：トップページ
+   CSSの各部分の役割を説明するコメント
    ============================================================ */
 
-/* ---- 1. 色：まず、ここを決める（授業の「配色」の項） ---- */
+
+/* ---- 1. 色の設定：サイト全体で使用する色 ---- */
 :root {
-  --base: #ffffff;      /* ★ベース色：背景（面積がいちばん広い） */
-  --base-sub: #f2f2f2;  /* ★ベースの、ひとつ濃い色：カードや帯の背景 */
-  --main: #555555;      /* ★メイン色：見出し、ヘッダー、最初の画面の背景 */
-  --accent: #999999;    /* ★アクセント色：ボタンだけに使う（ここは、必ず、変える） */
-  --text: #222222;      /* ★文字の色：背景との差（コントラスト）を確かめる */
+  --base: #ffffff;      /* ページ全体の背景色 */
+  --base-sub: #f2f2f2;  /* カードやセクションの背景色 */
+  --main: #555555;      /* 見出しやメイン部分に使用する色 */
+  --accent: #999999;    /* ボタンなどに使用するアクセントカラー */
+  --text: #222222;      /* 通常の文章に使用する文字色 */
 }
 
-/* ---- 余白：決めた大きさだけを使う（★大きさは、変えてよい）。上の「色」の :root とは、別のブロック ---- */
+/* ---- 余白の設定：統一した間隔を使用する ---- */
 :root {
   --s1: .5rem;
   --s2: 1rem;
@@ -22,58 +23,204 @@
   --s5: 5rem;
 }
 
-/* ---- 2. 全体の土台 ---- */
-* { box-sizing: border-box; margin: 0; }
+/* ---- 2. ページ全体の基本設定 ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 
 body {
-  /* ★font-family：優先順に並べて、最後に sans-serif か serif */
-  /* ★font-size、line-height（行の間隔）も、ここで決める */
+  /* ページ全体の文字色と背景色を設定する */
   color: var(--text);
   background-color: var(--base);
 }
 
-/* ★見出しだけ、別のフォントにするなら、ここ */
+/* 見出しのフォントを変更する場合は、ここに指定する */
 /* h1, h2, h3, .logo { font-family: ...; } */
 
-/* ---- 3. 中身の幅：最大960pxで、中央に ---- */
-.inner { max-width: 960px; margin: 0 auto; }
-.site-header, main > section, footer { padding-left: var(--s3); padding-right: var(--s3); }
 
-/* ---- 4. ヘッダー ---- */
-.site-header { padding-top: var(--s2); padding-bottom: var(--s2); border-bottom: 1px solid var(--base-sub); }
-.site-header .inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s1) var(--s3); }
-.logo { color: var(--main); font-size: 1.4rem; font-weight: 700; text-decoration: none; }
-.site-header nav ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s3); }
-.site-header nav a { color: var(--text); text-decoration: none; }
-.site-header nav a:hover { text-decoration: underline; }
+/* ---- 3. コンテンツの幅と配置 ---- */
+.inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
 
-/* ---- 5. 最初の画面 ---- */
-.hero { background-color: var(--main); color: var(--base); padding-top: var(--s4); padding-bottom: var(--s4); }
-.hero h1 { font-size: 2rem; margin-bottom: var(--s2); }   /* ★文字の大きさ：見出しの階層をつける */
-.hero p { margin-bottom: var(--s3); }
-.btn { display: inline-block; background-color: var(--accent); color: var(--text); font-weight: 700; padding: .8rem 1.6rem; border-radius: 6px; text-decoration: none; }
-.btn:hover { filter: brightness(1.08); }
+/* ヘッダー、各セクション、フッターの左右に余白を設定する */
+.site-header, main > section, footer {
+  padding-left: var(--s3);
+  padding-right: var(--s3);
+}
 
-/* ---- 6. 各セクション ---- */
-.features, .story, .info { padding-top: var(--s4); padding-bottom: var(--s4); }   /* ★セクションの間の余白 */
-.features h2, .story h2, .info h2 { font-size: 1.5rem; color: var(--main); margin-bottom: var(--s3); }
 
-.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s3); }
-.card { background-color: var(--base-sub); border-radius: 8px; padding: var(--s3); }
-.card h3 { color: var(--main); margin-bottom: var(--s1); }
+/* ---- 4. ヘッダー：ロゴとナビゲーション ---- */
+.site-header {
+  padding-top: var(--s2);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--base-sub);
+}
 
-.story { background-color: var(--base-sub); }
-.story p { max-width: 36em; margin-bottom: var(--s2); }   /* 1行の長さを、短くする */
+/* ロゴとナビゲーションを横並びに配置する */
+.site-header .inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s1) var(--s3);
+}
 
-.info dl { display: grid; grid-template-columns: 7em 1fr; gap: var(--s1) var(--s2); margin-bottom: var(--s3); }
-.info dt { font-weight: 700; color: var(--main); }
+/* サイトのロゴのデザイン */
+.logo {
+  color: var(--main);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+}
 
-footer { background-color: var(--text); color: var(--base); font-size: .85rem; padding-top: var(--s3); padding-bottom: var(--s3); }
+/* ナビゲーションメニューを横並びにする */
+.site-header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1) var(--s3);
+}
 
-/* ---- 7. スマホ：1列に（★自分のページに合わせて、確かめる・直す） ---- */
+/* メニューのリンクのデザイン */
+.site-header nav a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* リンクにマウスを合わせたときの表示 */
+.site-header nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* ---- 5. 最初の画面：メインビジュアル ---- */
+.hero {
+  background-color: var(--main);
+  color: var(--base);
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* メインタイトルの文字サイズと下の余白 */
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: var(--s2);
+}
+
+/* メイン説明文の下に余白を設定する */
+.hero p {
+  margin-bottom: var(--s3);
+}
+
+/* ボタンの基本デザイン */
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+  padding: .8rem 1.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* ボタンにマウスを合わせたときの効果 */
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+
+/* ---- 6. 各セクション：特徴・ストーリー・情報 ---- */
+
+/* 各セクションの上下に余白を設定する */
+.features, .story, .info {
+  padding-top: var(--s4);
+  padding-bottom: var(--s4);
+}
+
+/* セクションの見出しのデザイン */
+.features h2, .story h2, .info h2 {
+  font-size: 1.5rem;
+  color: var(--main);
+  margin-bottom: var(--s3);
+}
+
+/* カードを3列のグリッドで配置する */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s3);
+}
+
+/* カードの背景、角の丸み、内側の余白 */
+.card {
+  background-color: var(--base-sub);
+  border-radius: 8px;
+  padding: var(--s3);
+}
+
+/* カード内の見出しのデザイン */
+.card h3 {
+  color: var(--main);
+  margin-bottom: var(--s1);
+}
+
+/* ストーリー部分の背景色 */
+.story {
+  background-color: var(--base-sub);
+}
+
+/* ストーリーの文章の幅と余白を調整する */
+.story p {
+  max-width: 36em;
+  margin-bottom: var(--s2);
+}
+
+/* 情報を見やすい表形式で配置する */
+.info dl {
+  display: grid;
+  grid-template-columns: 7em 1fr;
+  gap: var(--s1) var(--s2);
+  margin-bottom: var(--s3);
+}
+
+/* 情報項目のタイトルを強調する */
+.info dt {
+  font-weight: 700;
+  color: var(--main);
+}
+
+/* フッターの背景色、文字色、文字サイズ、余白 */
+footer {
+  background-color: var(--text);
+  color: var(--base);
+  font-size: .85rem;
+  padding-top: var(--s3);
+  padding-bottom: var(--s3);
+}
+
+
+/* ---- 7. スマートフォン対応：画面幅700px以下 ---- */
 @media (max-width: 700px) {
-  .cards { grid-template-columns: 1fr; }
-  .info dl { grid-template-columns: 1fr; gap: 0; }
-  .info dd { margin-bottom: var(--s2); }
-  /* ★メニューが、スマホで、窮屈なときは、ここで直す */
+
+  /* カードを3列から1列に変更する */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  /* 情報欄を縦方向に並べる */
+  .info dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* 情報の説明文の下に余白を設定する */
+  .info dd {
+    margin-bottom: var(--s2);
+  }
+
+  /* スマートフォンでのメニュー表示を調整する場合はここに追加する */
 }
